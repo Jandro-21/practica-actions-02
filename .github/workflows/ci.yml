@@ -12,6 +12,11 @@ jobs:
     strategy:
       matrix:
         node-version: [18, 20, 22]
+  solo-en-main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Esto solo se ve en main"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
